@@ -25,11 +25,11 @@ public abstract class SimpleActivity extends AppCompatActivity {
         initListener();
     }
 
-    private void initListener() {
+    protected void initListener() {
 
     }
 
-    private void initView() {
+    protected void initView() {
 
     }
 

@@ -52,4 +52,6 @@ dependencies {
     implementation rootProject.ext.dependencies["rxjava"]
     implementation rootProject.ext.dependencies["rxandroid"]
     implementation rootProject.ext.dependencies["glide"]
+    //沉浸式状态栏
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
 }

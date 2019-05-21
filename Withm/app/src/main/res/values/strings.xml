@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">伴米旅行</string>
+    <string name="tiyan">立即体验</string>
+    <string name="guide_textone">严选当地人的私藏线路</string>
+    <string name="guide_textthree">智能地图为你指路</string>
+    <string name="guide_texttwo">智能语音实时导览</string>
 </resources>

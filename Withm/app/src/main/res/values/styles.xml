@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--将用于配置到特定的Activity上的样式-->
+    <style name="SplashStyle" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/layer_splash</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="FullScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--全屏的界面-->
+        <item name="android:windowFullscreen">true</item>
+    </style>
 </resources>
