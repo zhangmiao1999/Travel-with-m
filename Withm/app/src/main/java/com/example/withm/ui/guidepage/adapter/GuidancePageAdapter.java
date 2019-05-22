@@ -1,4 +1,4 @@
-package com.example.withm.ui;
+package com.example.withm.ui.guidepage.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

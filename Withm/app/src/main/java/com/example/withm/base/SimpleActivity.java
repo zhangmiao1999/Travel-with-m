@@ -22,7 +22,12 @@ public abstract class SimpleActivity extends AppCompatActivity {
         setContentView(createLayout());
         mUnbinder = ButterKnife.bind(this);
         initView();
+        initData();
         initListener();
+    }
+
+    protected void initData() {
+
     }
 
     protected void initListener() {

@@ -1,15 +1,17 @@
-package com.example.withm.ui;
+package com.example.withm.ui.guidepage.activity;
 
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.withm.MainActivity;
+import com.example.withm.ui.homepage.MainActivity;
 import com.example.withm.R;
 import com.example.withm.base.SimpleActivity;
+import com.example.withm.ui.guidepage.adapter.GuidancePageAdapter;
 import com.example.withm.utils.SpUtil;
 import com.example.withm.widget.PreviewIndicator;
 import com.jaeger.library.StatusBarUtil;
@@ -20,7 +22,7 @@ import java.util.ArrayList;
  * Created by 张嘉河 on 2019/5/21.
  */
 
-public class GuidepageActivity extends SimpleActivity implements ViewPager.OnPageChangeListener, View.OnClickListener{
+public class GuidepageActivity extends SimpleActivity implements ViewPager.OnPageChangeListener, View.OnTouchListener {
 
     private ViewPager mGuidanceVp;
     private PreviewIndicator mGuidePi;
@@ -35,12 +37,13 @@ public class GuidepageActivity extends SimpleActivity implements ViewPager.OnPag
         return R.layout.activity_guidepage;
     }
 
-    private void initData() {
+    @Override
+    protected void initData() {
+        super.initData();
         mGuidePi.initSize(80, 32, 6);
         mGuidePi.setNumbers(3);
         mGuidanceVp.addOnPageChangeListener(this);
     }
-
 
     @Override
     protected void initView() {
@@ -63,7 +66,7 @@ public class GuidepageActivity extends SimpleActivity implements ViewPager.OnPag
         mGuidanceVp.setAdapter(adapter);
 
         mGuideBtn = (Button) findViewById(R.id.guide_btn);
-        mGuideBtn.setOnClickListener(this);
+        mGuideBtn.setOnTouchListener(this);
     }
 
 
@@ -75,15 +78,15 @@ public class GuidepageActivity extends SimpleActivity implements ViewPager.OnPag
     @Override
     public void onPageSelected(int i) {
         mGuidePi.setSelected(i);
-        if (i==0){
-            mGuideBtn.setVisibility(View.GONE);
+        if (i == 0) {
             mGuidePi.setVisibility(View.VISIBLE);
-        }else if (i==1){
             mGuideBtn.setVisibility(View.GONE);
+        } else if (i == 1) {
             mGuidePi.setVisibility(View.VISIBLE);
+            mGuideBtn.setVisibility(View.GONE);
         } else if (i == 2) {
-            mGuidePi.setVisibility(View.GONE);
             mGuideBtn.setVisibility(View.VISIBLE);
+            mGuidePi.setVisibility(View.GONE);
         }
     }
 
@@ -93,20 +96,15 @@ public class GuidepageActivity extends SimpleActivity implements ViewPager.OnPag
     }
 
     @Override
-    public void onClick(View v) {
+    public boolean onTouch(View v, MotionEvent event) {
         switch (v.getId()) {
-            default:
-                break;
             case R.id.guide_btn:
-                mGuideBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        SpUtil.setParam("guide",true);
-                        startActivity(new Intent(GuidepageActivity.this, MainActivity.class));
-                        finish();
-                    }
-                });
+                Log.d("第一次点击", "onClick: ");
+                SpUtil.setParam("guide", true);
+                startActivity(new Intent(GuidepageActivity.this, MainActivity.class));
+                finish();
                 break;
         }
+        return false;
     }
 }

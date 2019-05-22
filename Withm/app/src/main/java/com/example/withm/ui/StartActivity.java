@@ -1,13 +1,10 @@
 package com.example.withm.ui;
 
 import android.content.Intent;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
-import com.example.withm.MainActivity;
 import com.example.withm.R;
 import com.example.withm.base.SimpleActivity;
+import com.example.withm.ui.guidepage.activity.GuidepageActivity;
 
 public class StartActivity extends SimpleActivity {
 

@@ -4,33 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.GuidepageActivity">
+    tools:context=".ui.guidepage.activity.GuidepageActivity">
 
     <android.support.v4.view.ViewPager
+        android:id="@+id/guidance_vp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/guidance_vp"/>
+        android:layout_height="match_parent" />
 
     <com.example.withm.widget.PreviewIndicator
         android:id="@+id/guide_pi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/dp_60"
-        />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_60" />
 
     <Button
-        android:visibility="gone"
         android:id="@+id/guide_btn"
         android:layout_width="@dimen/dp_127"
         android:layout_height="@dimen/dp_40"
-        android:text="@string/tiyan"
-        android:textSize="@dimen/sp_15"
-        android:textColor="@color/c_ffffff"
-        android:background="@drawable/nav_head_jianbianfan"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/dp_43"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_43"
+        android:background="@drawable/nav_head_jianbianfan"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:text="@string/tiyan"
+        android:textColor="@color/c_ffffff"
+        android:textSize="@dimen/sp_15"
+        android:visibility="gone" />
 
 </RelativeLayout>

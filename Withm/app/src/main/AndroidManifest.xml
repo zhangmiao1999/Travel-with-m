@@ -16,13 +16,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <!--引导页面-->
-        <activity android:name=".ui.GuidepageActivity"
-            android:theme="@style/SplashStyle">
-        </activity>
+        <activity android:name=".ui.homepage.MainActivity" />
+        <!-- 引导页面 -->
+        <activity
+            android:name=".ui.guidepage.activity.GuidepageActivity"
+            android:theme="@style/SplashStyle"></activity>
         <!-- APP入口 -->
-        <activity android:name=".ui.StartActivity"
+        <activity
+            android:name=".ui.StartActivity"
             android:theme="@style/SplashStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.login.LoginActivity"></activity>
     </application>
 
 </manifest>
