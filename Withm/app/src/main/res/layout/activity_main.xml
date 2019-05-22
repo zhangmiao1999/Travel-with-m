@@ -4,7 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context="com.example.withm.ui.homepage.MainActivity">
 
+    <FrameLayout
+        android:id="@+id/fl_contern"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lightgary"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_wan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/rb_wan"
+            android:gravity="center"
+            android:text="@string/wan"
+            android:textColor="@color/textcolors" />
+
+        <RadioButton
+            android:id="@+id/rb_discover"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/rb_wan"
+            android:gravity="center"
+            android:text="@string/discover"
+            android:textColor="@color/textcolors" />
+
+        <RadioButton
+            android:id="@+id/rb_concern"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/rb_concern"
+            android:gravity="center"
+            android:text="@string/concern"
+            android:textColor="@color/textcolors" />
+
+        <RadioButton
+            android:id="@+id/rb_my"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/rb_wan"
+            android:gravity="center"
+            android:text="@string/my"
+            android:textColor="@color/textcolors" />
+    </RadioGroup>
 </LinearLayout>
