@@ -31,7 +31,7 @@ public abstract class BaseFragment<V extends BaseView,P extends BasePresenter> e
         initView();
         initListener();
         initData();
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return inflate;
     }
 
     private void initData() {

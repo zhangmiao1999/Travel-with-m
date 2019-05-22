@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context="com.example.withm.ui.login.LoginActivity">
 
     <TextView
@@ -28,15 +29,108 @@
         android:textColor="@color/c_373737"
         android:textSize="27sp" />
 
+
     <LinearLayout
-        android:layout_width="@dimen/dp_329"
+        android:id="@+id/login_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_60"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:padding="@dimen/dp_20">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/car1"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_40"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/dp_20"
+            app:cardElevation="@dimen/dp_2"
+            app:cardMaxElevation="@dimen/dp_3">
+
+            <TextView
+                android:id="@+id/wx_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawablePadding="@dimen/dp_13"
+                android:drawableStart="@drawable/wechat"
+                android:gravity="center"
+                android:paddingRight="@dimen/dp_20"
+                android:text="@string/wxlogin"
+                android:textColor="@color/c_4dae46"
+                android:textSize="@dimen/sp_12"
+                tools:ignore="RtlCompat" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/car2"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_40"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_30"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/dp_20"
+            app:cardElevation="@dimen/dp_2"
+            app:cardMaxElevation="@dimen/dp_3">
+
+            <TextView
+                android:id="@+id/sina_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawablePadding="@dimen/dp_13"
+                android:drawableStart="@mipmap/sina"
+                android:gravity="center"
+                android:paddingRight="@dimen/dp_20"
+                android:text="@string/sinalogin"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/sp_12"
+                tools:ignore="RtlCompat" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/car3"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_40"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_30"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/dp_20"
+            app:cardElevation="@dimen/dp_2"
+            app:cardMaxElevation="@dimen/dp_3">
+
+            <TextView
+                android:id="@+id/phone_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/phone"
+                android:drawablePadding="@dimen/dp_15"
+                android:gravity="center"
+                android:text="@string/phonelogin"
+                android:textColor="@color/c_fa6a13"
+                android:textSize="@dimen/sp_12" />
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/phone_ll"
+        android:layout_width="@dimen/dp_360"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/dp_80">
+        android:layout_marginTop="@dimen/dp_80"
+        android:visibility="gone">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:src="@drawable/phone" />
 
         <TextView
@@ -49,6 +143,7 @@
             android:textSize="@dimen/sp_14" />
 
         <ImageView
+            android:id="@+id/iv_seleced"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -56,22 +151,83 @@
             android:src="@drawable/select" />
 
         <EditText
+            android:id="@+id/ed_phone"
             android:layout_width="@dimen/dp_120"
             android:layout_height="wrap_content"
-            android:background="@null"
             android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/dp_25"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:background="@null"
             android:hint="@string/ed_phone"
             android:textSize="@dimen/sp_16" />
+
+        <RelativeLayout
+            android:id="@+id/getCode_Rl"
+            android:layout_width="@dimen/dp_110"
+            android:layout_height="@dimen/dp_40"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_25"
+            android:background="@drawable/button_unavailable">
+
+            <TextView
+                android:id="@+id/sendCode_tv"
+                android:layout_width="@dimen/dp_90"
+                android:layout_height="@dimen/dp_32"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/sendCode"
+                android:textColor="@color/c_fffefefe"
+                android:textSize="@dimen/sp_14" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="@dimen/dp_360"
+        android:layout_height="@dimen/dp_1"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_7"
+        android:background="@color/c_fa6a13"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/dp_16"
+        android:gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/casual_tv"
+            android:textSize="@dimen/sp_12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:text="@string/casual"
+            android:textColor="@color/c_fa6a13" />
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/dp_26"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textSize="@dimen/sp_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/longAnd" />
+            <TextView
+                android:id="@+id/userAgreement"
+                android:textSize="@dimen/sp_12"
+                android:text="@string/userAgreement"
+                android:textColor="@color/c_fa6a13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
     </LinearLayout>
 
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="@dimen/dp_329"
-        android:layout_height="@dimen/dp_1"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/dp_9"
-        android:background="@color/c_fa6a13" />
 </LinearLayout>

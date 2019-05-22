@@ -7,4 +7,11 @@
     <string name="hello">你好，为了获取更好的服务</string>
     <string name="login_banni">请登录伴米旅行</string>
     <string name="ed_phone">请输入手机号码</string>
+    <string name="sendCode">发送验证码</string>
+    <string name="wxlogin">微信登录</string>
+    <string name="phonelogin">手机号登录</string>
+    <string name="sinalogin">微博登录</string>
+    <string name="casual">随便逛逛 》</string>
+    <string name="longAnd">登录或注册即同意伴米旅行</string>
+    <string name="userAgreement">用户协议</string>
 </resources>
