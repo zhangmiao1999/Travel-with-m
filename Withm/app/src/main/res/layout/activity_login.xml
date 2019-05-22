@@ -55,6 +55,11 @@
             android:layout_marginLeft="@dimen/dp_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <EditText
+            android:hint="@string/ed_phone"
+            android:textSize="@dimen/sp_16"
+            android:layout_width="@dimen/dp_118"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

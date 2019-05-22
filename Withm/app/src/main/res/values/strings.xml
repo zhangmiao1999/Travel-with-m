@@ -6,4 +6,5 @@
     <string name="guide_texttwo">智能语音实时导览</string>
     <string name="hello">你好，为了获取更好的服务</string>
     <string name="login_banni">请登录伴米旅行</string>
+    <string name="ed_phone">请输入手机号码</string>
 </resources>
