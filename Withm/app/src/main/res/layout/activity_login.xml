@@ -35,7 +35,6 @@
         android:layout_marginTop="@dimen/dp_80">
 
         <ImageView
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/phone" />
@@ -43,23 +42,27 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+86"
-            android:layout_marginLeft="@dimen/dp_8"
             android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:text="+86"
             android:textColor="#FF636363"
             android:textSize="@dimen/sp_14" />
 
         <ImageView
-            android:src="@drawable/select"
-            android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/dp_2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_4"
+            android:src="@drawable/select" />
+
         <EditText
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_25"
             android:hint="@string/ed_phone"
-            android:textSize="@dimen/sp_16"
-            android:layout_width="@dimen/dp_118"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/sp_16" />
 
     </LinearLayout>
 
