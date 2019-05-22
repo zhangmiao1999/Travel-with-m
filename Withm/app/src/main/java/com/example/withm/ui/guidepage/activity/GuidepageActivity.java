@@ -19,7 +19,7 @@ import com.jaeger.library.StatusBarUtil;
 import java.util.ArrayList;
 
 /**
- * Created by 张嘉河 on 2019/5/21.
+ * Created by
  */
 
 public class GuidepageActivity extends SimpleActivity implements ViewPager.OnPageChangeListener, View.OnTouchListener {
