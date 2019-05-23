@@ -7,4 +7,7 @@ import com.example.withm.base.BaseView;
  */
 
 public interface WanV extends BaseView{
+    void Success(DayBean bean);
+
+    void onFail(String msg);
 }

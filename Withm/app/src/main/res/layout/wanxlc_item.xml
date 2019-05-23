@@ -10,6 +10,7 @@
         android:background="@drawable/radious">
 
         <ImageView
+            android:id="@+id/pic"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
@@ -18,18 +19,20 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#22000000"
+            android:background="#50000000"
             android:padding="@dimen/dp_4">
 
             <TextView
                 android:id="@+id/japan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:text="@string/japan"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/dao"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/japan"
@@ -39,6 +42,7 @@
 
             <TextView
                 android:id="@+id/zhidao"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/dao"
@@ -60,6 +64,7 @@
 
             <TextView
                 android:id="@+id/intrestring"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

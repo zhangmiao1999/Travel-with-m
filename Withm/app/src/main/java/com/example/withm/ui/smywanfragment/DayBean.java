@@ -1,6 +1,5 @@
 package com.example.withm.ui.smywanfragment;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -8,561 +7,124 @@ import java.util.List;
  */
 
 public class DayBean {
+
     /**
-     * date : 1456675200000
-     * publishTime : 1456675200000
-     * type : normal
-     * count : 6
-     * itemList : [{"type":"video","data":{"id":5754,"date":1456675200000,"idx":1,"title":"奥斯卡号外丨恭喜小李子终于申奥成功","description":"恭喜小李子结束了长达 20 年的陪跑~最新采访小李时，谈到为何投身环保，同时还坚持演戏。他说作为明星很多时候说话不受重视，但至少站出来说话能被听到，如果不演戏就没人听他说这些环保的事了。From Burger Fiction","category":"综合","duration":454,"playUrl":"http://baobab.wdjcdn.com/1456717752764486381173.mp4","playInfo":[{"height":480,"width":854,"name":"标清","type":"normal","url":"http://baobab.wdjcdn.com/1456718039738_5754_854x480.mp4"},{"height":720,"width":1280,"name":"高清","type":"high","url":"http://baobab.wdjcdn.com/1456717752764486381173.mp4"}],"consumption":{"collectionCount":602,"shareCount":2628,"playCount":0,"replyCount":51},"promotion":null,"waterMarks":null,"provider":{"name":"Vimeo","alias":"vimeo","icon":"http://img.wdjimg.com/image/video/c3ad630be461cbb081649c9e21d6cbe3_256_256.png"},"author":null,"adTrack":null,"shareAdTrack":null,"favoriteAdTrack":null,"webAdTrack":null,"cover":{"feed":"http://img.wdjimg.com/image/video/3141c1e1a154d17a5742eb9ab4a8723b_0_0.jpeg","detail":"http://img.wdjimg.com/image/video/3141c1e1a154d17a5742eb9ab4a8723b_0_0.jpeg","blurred":"http://img.wdjimg.com/image/video/e7686329d482d4bfa939acbcd53060ea_0_0.jpeg","sharing":"http://img.wdjimg.com/image/video/3141c1e1a154d17a5742eb9ab4a8723b_0_0.jpeg"},"webUrl":{"raw":"http://www.wandoujia.com/eyepetizer/detail.html?vid=5754","forWeibo":"http://wandou.im/1l1ibm"},"campaign":null}}]
+     * error : false
+     * results : [{"_id":"5b27c7bf421aa923c0fbfda1","createdAt":"2018-06-18T22:54:55.614Z","desc":"2018-06-20","publishedAt":"2018-06-20T00:00:00.0Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1fsfq1ykabxj30k00pracv.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b27c7eb421aa923c43fe485","createdAt":"2018-06-18T22:55:39.819Z","desc":"2018-06-22","publishedAt":"2018-06-19T00:00:00.0Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1fsfq2pwt72j30qo0yg78u.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b2269a6421aa92a5f2a35f9","createdAt":"2018-06-14T21:12:06.463Z","desc":"2018-06-15","publishedAt":"2018-06-15T00:00:00.0Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1fsb0lh7vl0j30go0ligni.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b1fec10421aa9793930bf99","createdAt":"2018-06-12T23:51:44.815Z","desc":"2018-06-13","publishedAt":"2018-06-14T00:00:00.0Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1fs8tym1e8ej30j60ouwhz.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b1fec9f421aa9793930bf9a","createdAt":"2018-06-12T23:54:07.908Z","desc":"2018-06-14","publishedAt":"2018-06-13T00:00:00.0Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1fs8u1joq6fj30j60orwin.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b1e8164421aa910a82cf54f","createdAt":"2018-06-11T22:04:20.9Z","desc":"2018-06-12","publishedAt":"2018-06-12T00:00:00.0Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1fs7l8ijitfj30jg0shdkc.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b196deb421aa910ab3d6b3d","createdAt":"2018-06-08T01:39:55.555Z","desc":"2018-06-09","publishedAt":"2018-06-11T00:00:00.0Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1fs35026dloj30j60ov79x.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b196d0b421aa910ab3d6b3c","createdAt":"2018-06-08T01:36:11.740Z","desc":"2018-06-08","publishedAt":"2018-06-08T00:00:00.0Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1fs34w0jx9jj30j60ootcn.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b17fec9421aa9109f56a6bb","createdAt":"2018-06-06T23:33:29.429Z","desc":"2018-06-07","publishedAt":"2018-06-07T00:00:00.0Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1fs1vq7vlsoj30k80q2ae5.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b1026a0421aa9029661ae00","createdAt":"2018-06-01T00:45:20.83Z","desc":"2018-06-01","publishedAt":"2018-06-06T00:00:00.0Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1frv032vod8j30k80q6gsz.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b15ec20421aa97e45f15aae","createdAt":"2018-06-05T09:49:20.355Z","desc":"2018-06-05","publishedAt":"2018-06-05T00:00:00.0Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1fs02a9b0nvj30sg10vk4z.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b14aaa9421aa93df569c6f1","createdAt":"2018-06-04T10:57:45.583Z","desc":"2018-06-04","publishedAt":"2018-06-04T00:00:00.0Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1fryyn63fm1j30sg0yagt2.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b1026ba421aa9029895ba44","createdAt":"2018-06-01T00:45:46.820Z","desc":"2018-06-02","publishedAt":"2018-06-01T00:00:00.0Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1frv03m8ky5j30iz0rltfp.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b0d6946421aa97f0308836b","createdAt":"2018-05-29T22:52:54.29Z","desc":"2018-05-31","publishedAt":"2018-05-31T00:00:00.0Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1frsllc19gfj30k80tfah5.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b0d6895421aa97f0308836a","createdAt":"2018-05-29T22:49:57.62Z","desc":"2018-05-30","publishedAt":"2018-05-30T13:22:16.505Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1frslibvijrj30k80q678q.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b0c2bc3421aa97f0624f447","createdAt":"2018-05-29T00:18:11.714Z","desc":"2018-05-29","publishedAt":"2018-05-29T15:38:50.405Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1frrifts8l5j30j60ojq6u.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b0b5839421aa97f00f67c5c","createdAt":"2018-05-28T09:15:37.475Z","desc":"2018-05-28","publishedAt":"2018-05-28T18:51:58.793Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1frqscr5o00j30k80qzafc.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b06dc9c421aa97f03088341","createdAt":"2018-05-24T23:39:08.401Z","desc":"2018.5.25-1","publishedAt":"2018-05-25T10:30:37.805Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1frmuto5qlzj30ia0notd8.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b02e1cd421aa96031463fe4","createdAt":"2018-05-21T23:12:13.646Z","desc":"2018.5.25","publishedAt":"2018-05-24T11:03:54.588Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1frjd77dt8zj30k80q2aga.jpg","used":true,"who":"lijinshanmx"},{"_id":"5b02e163421aa9602d6abd36","createdAt":"2018-05-21T23:10:27.865Z","desc":"2018.5.23","publishedAt":"2018-05-23T00:22:29.342Z","source":"web","type":"福利","url":"http://ww1.sinaimg.cn/large/0065oQSqly1frjd4var2bj30k80q0dlf.jpg","used":true,"who":"lijinshanmx"}]
      */
 
-    private String nextPageUrl;
+    private boolean error;
+    private List<ResultsBean> results;
 
-    public String getNextPageUrl() {
-        return nextPageUrl;
+    public boolean isError() {
+        return error;
     }
 
-    public void setNextPageUrl(String nextPageUrl) {
-        this.nextPageUrl = nextPageUrl;
+    public void setError(boolean error) {
+        this.error = error;
     }
 
-    private List<IssueListEntity> issueList;
-
-    public void setIssueList(List<IssueListEntity> issueList) {
-        this.issueList = issueList;
+    public List<ResultsBean> getResults() {
+        return results;
     }
 
-    public List<IssueListEntity> getIssueList() {
-        return issueList;
+    public void setResults(List<ResultsBean> results) {
+        this.results = results;
     }
 
-    public static class IssueListEntity {
-        private long date;
-        private long publishTime;
-        private String type;
-        private int count;
+    public static class ResultsBean {
         /**
-         * type : video
-         * data : {"id":5754,"date":1456675200000,"idx":1,"title":"奥斯卡号外丨恭喜小李子终于申奥成功","description":"恭喜小李子结束了长达 20 年的陪跑~最新采访小李时，谈到为何投身环保，同时还坚持演戏。他说作为明星很多时候说话不受重视，但至少站出来说话能被听到，如果不演戏就没人听他说这些环保的事了。From Burger Fiction","category":"综合","duration":454,"playUrl":"http://baobab.wdjcdn.com/1456717752764486381173.mp4","playInfo":[{"height":480,"width":854,"name":"标清","type":"normal","url":"http://baobab.wdjcdn.com/1456718039738_5754_854x480.mp4"},{"height":720,"width":1280,"name":"高清","type":"high","url":"http://baobab.wdjcdn.com/1456717752764486381173.mp4"}],"consumption":{"collectionCount":602,"shareCount":2628,"playCount":0,"replyCount":51},"promotion":null,"waterMarks":null,"provider":{"name":"Vimeo","alias":"vimeo","icon":"http://img.wdjimg.com/image/video/c3ad630be461cbb081649c9e21d6cbe3_256_256.png"},"author":null,"adTrack":null,"shareAdTrack":null,"favoriteAdTrack":null,"webAdTrack":null,"cover":{"feed":"http://img.wdjimg.com/image/video/3141c1e1a154d17a5742eb9ab4a8723b_0_0.jpeg","detail":"http://img.wdjimg.com/image/video/3141c1e1a154d17a5742eb9ab4a8723b_0_0.jpeg","blurred":"http://img.wdjimg.com/image/video/e7686329d482d4bfa939acbcd53060ea_0_0.jpeg","sharing":"http://img.wdjimg.com/image/video/3141c1e1a154d17a5742eb9ab4a8723b_0_0.jpeg"},"webUrl":{"raw":"http://www.wandoujia.com/eyepetizer/detail.html?vid=5754","forWeibo":"http://wandou.im/1l1ibm"},"campaign":null}
+         * _id : 5b27c7bf421aa923c0fbfda1
+         * createdAt : 2018-06-18T22:54:55.614Z
+         * desc : 2018-06-20
+         * publishedAt : 2018-06-20T00:00:00.0Z
+         * source : web
+         * type : 福利
+         * url : http://ww1.sinaimg.cn/large/0065oQSqly1fsfq1ykabxj30k00pracv.jpg
+         * used : true
+         * who : lijinshanmx
          */
 
-        private List<ItemListEntity> itemList;
+        private String _id;
+        private String createdAt;
+        private String desc;
+        private String publishedAt;
+        private String source;
+        private String type;
+        private String url;
+        private boolean used;
+        private String who;
 
-        public void setDate(long date) {
-            this.date = date;
+        public String get_id() {
+            return _id;
         }
 
-        public void setPublishTime(long publishTime) {
-            this.publishTime = publishTime;
+        public void set_id(String _id) {
+            this._id = _id;
         }
 
-        public void setType(String type) {
-            this.type = type;
+        public String getCreatedAt() {
+            return createdAt;
         }
 
-        public void setCount(int count) {
-            this.count = count;
+        public void setCreatedAt(String createdAt) {
+            this.createdAt = createdAt;
         }
 
-        public void setItemList(List<ItemListEntity> itemList) {
-            this.itemList = itemList;
+        public String getDesc() {
+            return desc;
         }
 
-        public long getDate() {
-            return date;
+        public void setDesc(String desc) {
+            this.desc = desc;
         }
 
-        public long getPublishTime() {
-            return publishTime;
+        public String getPublishedAt() {
+            return publishedAt;
+        }
+
+        public void setPublishedAt(String publishedAt) {
+            this.publishedAt = publishedAt;
+        }
+
+        public String getSource() {
+            return source;
+        }
+
+        public void setSource(String source) {
+            this.source = source;
         }
 
         public String getType() {
             return type;
         }
 
-        public int getCount() {
-            return count;
+        public void setType(String type) {
+            this.type = type;
         }
 
-        public List<ItemListEntity> getItemList() {
-            return itemList;
+        public String getUrl() {
+            return url;
         }
 
-        public static class ItemListEntity implements Serializable {
-            private String type;
-            private String image;
-
-            public String getImage() {
-                return image;
-            }
-
-            public void setImage(String image) {
-                this.image = image;
-            }
-
-            /**
-             * id : 5754
-             * date : 1456675200000
-             * idx : 1
-             * title : 奥斯卡号外丨恭喜小李子终于申奥成功
-             * description : 恭喜小李子结束了长达 20 年的陪跑~最新采访小李时，谈到为何投身环保，同时还坚持演戏。他说作为明星很多时候说话不受重视，但至少站出来说话能被听到，如果不演戏就没人听他说这些环保的事了。From Burger Fiction
-             * category : 综合
-             * duration : 454
-             * playUrl : http://baobab.wdjcdn.com/1456717752764486381173.mp4
-             * playInfo : [{"height":480,"width":854,"name":"标清","type":"normal","url":"http://baobab.wdjcdn.com/1456718039738_5754_854x480.mp4"},{"height":720,"width":1280,"name":"高清","type":"high","url":"http://baobab.wdjcdn.com/1456717752764486381173.mp4"}]
-             * consumption : {"collectionCount":602,"shareCount":2628,"playCount":0,"replyCount":51}
-             * promotion : null
-             * waterMarks : null
-             * provider : {"name":"Vimeo","alias":"vimeo","icon":"http://img.wdjimg.com/image/video/c3ad630be461cbb081649c9e21d6cbe3_256_256.png"}
-             * author : null
-             * adTrack : null
-             * shareAdTrack : null
-             * favoriteAdTrack : null
-             * webAdTrack : null
-             * cover : {"feed":"http://img.wdjimg.com/image/video/3141c1e1a154d17a5742eb9ab4a8723b_0_0.jpeg","detail":"http://img.wdjimg.com/image/video/3141c1e1a154d17a5742eb9ab4a8723b_0_0.jpeg","blurred":"http://img.wdjimg.com/image/video/e7686329d482d4bfa939acbcd53060ea_0_0.jpeg","sharing":"http://img.wdjimg.com/image/video/3141c1e1a154d17a5742eb9ab4a8723b_0_0.jpeg"}
-             * webUrl : {"raw":"http://www.wandoujia.com/eyepetizer/detail.html?vid=5754","forWeibo":"http://wandou.im/1l1ibm"}
-             * campaign : null
-             */
-
-            private DataEntity data;
-
-            public void setType(String type) {
-                this.type = type;
-            }
-
-            public void setData(DataEntity data) {
-                this.data = data;
-            }
-
-            public String getType() {
-                return type;
-            }
-
-            public DataEntity getData() {
-                return data;
-            }
-
-            public static class DataEntity {
-                private String image;
-
-                public String getImage() {
-                    return image;
-                }
-
-                public void setImage(String image) {
-                    this.image = image;
-                }
-
-                private int id;
-                private long date;
-                private int idx;
-                private String title;
-                private String description;
-                private String category;
-                private int duration;
-                private String playUrl;
-                private String text;
-
-                public String getText() {
-                    return text;
-                }
-
-                public void setText(String text) {
-                    this.text = text;
-                }
-
-                /**
-                 * collectionCount : 602
-                 * shareCount : 2628
-                 * playCount : 0
-                 * replyCount : 51
-                 */
-
-                private ConsumptionEntity consumption;
-                private Object promotion;
-                private Object waterMarks;
-                /**
-                 * name : Vimeo
-                 * alias : vimeo
-                 * icon : http://img.wdjimg.com/image/video/c3ad630be461cbb081649c9e21d6cbe3_256_256.png
-                 */
-
-                private ProviderEntity provider;
-                private Object author;
-                private Object adTrack;
-                private Object shareAdTrack;
-                private Object favoriteAdTrack;
-                private Object webAdTrack;
-                /**
-                 * feed : http://img.wdjimg.com/image/video/3141c1e1a154d17a5742eb9ab4a8723b_0_0.jpeg
-                 * detail : http://img.wdjimg.com/image/video/3141c1e1a154d17a5742eb9ab4a8723b_0_0.jpeg
-                 * blurred : http://img.wdjimg.com/image/video/e7686329d482d4bfa939acbcd53060ea_0_0.jpeg
-                 * sharing : http://img.wdjimg.com/image/video/3141c1e1a154d17a5742eb9ab4a8723b_0_0.jpeg
-                 */
-
-                private CoverEntity cover;
-                /**
-                 * raw : http://www.wandoujia.com/eyepetizer/detail.html?vid=5754
-                 * forWeibo : http://wandou.im/1l1ibm
-                 */
-
-                private WebUrlEntity webUrl;
-                private Object campaign;
-                /**
-                 * height : 480
-                 * width : 854
-                 * name : 标清
-                 * type : normal
-                 * url : http://baobab.wdjcdn.com/1456718039738_5754_854x480.mp4
-                 */
-
-                private List<PlayInfoEntity> playInfo;
-
-                public void setId(int id) {
-                    this.id = id;
-                }
-
-                public void setDate(long date) {
-                    this.date = date;
-                }
-
-                public void setIdx(int idx) {
-                    this.idx = idx;
-                }
-
-                public void setTitle(String title) {
-                    this.title = title;
-                }
-
-                public void setDescription(String description) {
-                    this.description = description;
-                }
-
-                public void setCategory(String category) {
-                    this.category = category;
-                }
-
-                public void setDuration(int duration) {
-                    this.duration = duration;
-                }
-
-                public void setPlayUrl(String playUrl) {
-                    this.playUrl = playUrl;
-                }
-
-                public void setConsumption(ConsumptionEntity consumption) {
-                    this.consumption = consumption;
-                }
-
-                public void setPromotion(Object promotion) {
-                    this.promotion = promotion;
-                }
-
-                public void setWaterMarks(Object waterMarks) {
-                    this.waterMarks = waterMarks;
-                }
-
-                public void setProvider(ProviderEntity provider) {
-                    this.provider = provider;
-                }
-
-                public void setAuthor(Object author) {
-                    this.author = author;
-                }
-
-                public void setAdTrack(Object adTrack) {
-                    this.adTrack = adTrack;
-                }
-
-                public void setShareAdTrack(Object shareAdTrack) {
-                    this.shareAdTrack = shareAdTrack;
-                }
-
-                public void setFavoriteAdTrack(Object favoriteAdTrack) {
-                    this.favoriteAdTrack = favoriteAdTrack;
-                }
-
-                public void setWebAdTrack(Object webAdTrack) {
-                    this.webAdTrack = webAdTrack;
-                }
-
-                public void setCover(CoverEntity cover) {
-                    this.cover = cover;
-                }
-
-                public void setWebUrl(WebUrlEntity webUrl) {
-                    this.webUrl = webUrl;
-                }
-
-                public void setCampaign(Object campaign) {
-                    this.campaign = campaign;
-                }
-
-                public void setPlayInfo(List<PlayInfoEntity> playInfo) {
-                    this.playInfo = playInfo;
-                }
-
-                public int getId() {
-                    return id;
-                }
-
-                public long getDate() {
-                    return date;
-                }
-
-                public int getIdx() {
-                    return idx;
-                }
-
-                public String getTitle() {
-                    return title;
-                }
-
-                public String getDescription() {
-                    return description;
-                }
-
-                public String getCategory() {
-                    return category;
-                }
-
-                public int getDuration() {
-                    return duration;
-                }
-
-                public String getPlayUrl() {
-                    return playUrl;
-                }
-
-                public ConsumptionEntity getConsumption() {
-                    return consumption;
-                }
-
-                public Object getPromotion() {
-                    return promotion;
-                }
-
-                public Object getWaterMarks() {
-                    return waterMarks;
-                }
-
-                public ProviderEntity getProvider() {
-                    return provider;
-                }
-
-                public Object getAuthor() {
-                    return author;
-                }
-
-                public Object getAdTrack() {
-                    return adTrack;
-                }
-
-                public Object getShareAdTrack() {
-                    return shareAdTrack;
-                }
-
-                public Object getFavoriteAdTrack() {
-                    return favoriteAdTrack;
-                }
-
-                public Object getWebAdTrack() {
-                    return webAdTrack;
-                }
-
-                public CoverEntity getCover() {
-                    return cover;
-                }
-
-                public WebUrlEntity getWebUrl() {
-                    return webUrl;
-                }
-
-                public Object getCampaign() {
-                    return campaign;
-                }
-
-                public List<PlayInfoEntity> getPlayInfo() {
-                    return playInfo;
-                }
-
-                public static class ConsumptionEntity {
-                    private int collectionCount;
-                    private int shareCount;
-                    private int playCount;
-                    private int replyCount;
-
-                    public void setCollectionCount(int collectionCount) {
-                        this.collectionCount = collectionCount;
-                    }
-
-                    public void setShareCount(int shareCount) {
-                        this.shareCount = shareCount;
-                    }
-
-                    public void setPlayCount(int playCount) {
-                        this.playCount = playCount;
-                    }
-
-                    public void setReplyCount(int replyCount) {
-                        this.replyCount = replyCount;
-                    }
-
-                    public int getCollectionCount() {
-                        return collectionCount;
-                    }
-
-                    public int getShareCount() {
-                        return shareCount;
-                    }
-
-                    public int getPlayCount() {
-                        return playCount;
-                    }
-
-                    public int getReplyCount() {
-                        return replyCount;
-                    }
-                }
-
-                public static class ProviderEntity {
-                    private String name;
-                    private String alias;
-                    private String icon;
-
-                    public void setName(String name) {
-                        this.name = name;
-                    }
-
-                    public void setAlias(String alias) {
-                        this.alias = alias;
-                    }
-
-                    public void setIcon(String icon) {
-                        this.icon = icon;
-                    }
-
-                    public String getName() {
-                        return name;
-                    }
-
-                    public String getAlias() {
-                        return alias;
-                    }
-
-                    public String getIcon() {
-                        return icon;
-                    }
-                }
-
-                public static class CoverEntity {
-                    private String feed;
-                    private String detail;
-                    private String blurred;
-                    private String sharing;
-
-                    public void setFeed(String feed) {
-                        this.feed = feed;
-                    }
-
-                    public void setDetail(String detail) {
-                        this.detail = detail;
-                    }
-
-                    public void setBlurred(String blurred) {
-                        this.blurred = blurred;
-                    }
-
-                    public void setSharing(String sharing) {
-                        this.sharing = sharing;
-                    }
-
-                    public String getFeed() {
-                        return feed;
-                    }
-
-                    public String getDetail() {
-                        return detail;
-                    }
-
-                    public String getBlurred() {
-                        return blurred;
-                    }
-
-                    public String getSharing() {
-                        return sharing;
-                    }
-                }
-
-                public static class WebUrlEntity {
-                    private String raw;
-                    private String forWeibo;
-
-                    public void setRaw(String raw) {
-                        this.raw = raw;
-                    }
-
-                    public void setForWeibo(String forWeibo) {
-                        this.forWeibo = forWeibo;
-                    }
-
-                    public String getRaw() {
-                        return raw;
-                    }
-
-                    public String getForWeibo() {
-                        return forWeibo;
-                    }
-                }
-
-                public static class PlayInfoEntity {
-                    private int height;
-                    private int width;
-                    private String name;
-                    private String type;
-                    private String url;
-
-                    public void setHeight(int height) {
-                        this.height = height;
-                    }
-
-                    public void setWidth(int width) {
-                        this.width = width;
-                    }
-
-                    public void setName(String name) {
-                        this.name = name;
-                    }
-
-                    public void setType(String type) {
-                        this.type = type;
-                    }
-
-                    public void setUrl(String url) {
-                        this.url = url;
-                    }
-
-                    public int getHeight() {
-                        return height;
-                    }
-
-                    public int getWidth() {
-                        return width;
-                    }
-
-                    public String getName() {
-                        return name;
-                    }
-
-                    public String getType() {
-                        return type;
-                    }
-
-                    public String getUrl() {
-                        return url;
-                    }
-                }
-            }
+        public void setUrl(String url) {
+            this.url = url;
+        }
+
+        public boolean isUsed() {
+            return used;
+        }
+
+        public void setUsed(boolean used) {
+            this.used = used;
+        }
+
+        public String getWho() {
+            return who;
+        }
+
+        public void setWho(String who) {
+            this.who = who;
         }
     }
 }
