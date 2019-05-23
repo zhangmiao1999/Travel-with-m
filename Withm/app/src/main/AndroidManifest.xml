@@ -28,29 +28,20 @@
         <!-- APP入口 -->
         <activity
             android:name=".ui.StartActivity"
-<<<<<<< HEAD
             android:theme="@style/SplashStyle">
 
         </activity>
+
         <activity android:name=".ui.login.LoginActivity"
-            android:theme="@style/TranslucentTheme">
-=======
-            android:theme="@style/SplashStyle"
+            android:theme="@style/TranslucentTheme"
             android:launchMode="singleInstance">
->>>>>>> d84382a9edf808100cf57f12f3047156353116e6
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-=======
-        <activity android:name=".ui.login.LoginActivity"
-            android:launchMode="singleInstance"/>
-
-
->>>>>>> d84382a9edf808100cf57f12f3047156353116e6
     </application>
 
 </manifest>
