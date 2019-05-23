@@ -20,4 +20,5 @@
     <color name="gary">#999999</color>
     <color name="lightgary">#22000000</color>
     <color name="alpha">#00ffffff</color>
+    <color name="lightblue">#68EDF9</color>
 </resources>

@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
 
+
     <application
         android:name=".app.MyApplication"
         android:allowBackup="true"
@@ -16,30 +17,60 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--首页-->
         <activity
             android:name=".ui.homepage.MainActivity"
             android:launchMode="singleInstance"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/TranslucentTheme" />
         <!-- 引导页面 -->
         <activity
             android:name=".ui.guidepage.activity.GuidepageActivity"
-            android:launchMode="singleInstance"
+            android:launchMode="singleTask"
             android:theme="@style/SplashStyle" />
         <!-- APP入口 -->
         <activity
             android:name=".ui.StartActivity"
-            android:theme="@style/SplashStyle"></activity>
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:launchMode="singleInstance"
-            android:theme="@style/TranslucentTheme">
+            android:theme="@style/SplashStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--登录页面-->
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:theme="@style/TranslucentTheme">
+
+        </activity>
+        <!--验证码-->
         <activity android:name=".ui.login.SendVeriActivity"></activity>
+
+        <!--友盟start-->
+        <activity
+            android:name="com.umeng.socialize.media.WBShareCallBackActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:exported="false"
+            >
+        </activity>
+        <activity android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            >
+
+        </activity>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:launchMode="singleTask"
+            android:name="com.sina.weibo.sdk.share.WbShareTransActivity">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

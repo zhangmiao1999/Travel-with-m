@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int TYPE_MY = 3;
     private FragmentManager mFragmentManager;
     private int lastFragment;
-    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,8 +83,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mRbWan.setChecked(true);
 
-        mToolbar.setTitle(" ");
-        setSupportActionBar(mToolbar);
     }
 
     @Override

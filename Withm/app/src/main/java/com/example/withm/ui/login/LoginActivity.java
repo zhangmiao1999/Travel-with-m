@@ -21,9 +21,17 @@ import android.widget.TextView;
 
 import com.example.withm.R;
 import com.example.withm.app.MyApplication;
+import com.example.withm.base.BaseActivity;
 import com.example.withm.base.SimpleActivity;
+import com.example.withm.http.bean.SinaBean;
+import com.example.withm.http.presenter.SinaPresenter;
+import com.example.withm.http.view.SinaView;
 import com.example.withm.ui.homepage.MainActivity;
+import com.example.withm.utils.AccountValidatorUtil;
+import com.example.withm.utils.SpUtil;
 import com.example.withm.utils.ToastUtil;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.bean.SHARE_MEDIA;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -32,7 +40,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LoginActivity extends SimpleActivity {
+public class LoginActivity extends BaseActivity<SinaView, SinaPresenter> implements SinaView {
 
 
     @BindView(R.id.hello)
@@ -64,7 +72,6 @@ public class LoginActivity extends SimpleActivity {
     @BindView(R.id.login_ll)
     LinearLayout mLoginLl;
     //输入的手机号
-    private String mPhone;
 
     @Override
     protected int createLayout() {
@@ -76,7 +83,17 @@ public class LoginActivity extends SimpleActivity {
         super.initView();
         mUserAgreement.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
         mUserAgreement.getPaint().setAntiAlias(true);//抗锯齿
+        Boolean loginBind = (Boolean) SpUtil.getParam("loginBind", false);
+        //判断是否登录，如果登录直接跳转主页
+        if (loginBind) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
+    }
 
+    @Override
+    protected SinaPresenter createPresenter() {
+        return new SinaPresenter();
     }
 
     @Override
@@ -90,9 +107,9 @@ public class LoginActivity extends SimpleActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (count > 0){
+                if (count > 0) {
                     mGetCodeRl.setBackgroundResource(R.drawable.button_highlight);
-                }else {
+                } else {
                     mGetCodeRl.setBackgroundResource(R.drawable.button_unavailable);
                 }
             }
@@ -119,7 +136,8 @@ public class LoginActivity extends SimpleActivity {
                 break;
             case R.id.sina_login:
                 //登录微博
-                ToastUtil.showShort("微博登录");
+                mPresenter.oauthLogin(SHARE_MEDIA.SINA, this);
+
                 break;
             case R.id.phone_login:
                 //手机号登录
@@ -128,7 +146,7 @@ public class LoginActivity extends SimpleActivity {
                 mLoginLl.setVisibility(View.GONE);
                 break;
             case R.id.casual_tv:
-                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 //随便逛逛
                 break;
             case R.id.userAgreement:
@@ -142,13 +160,17 @@ public class LoginActivity extends SimpleActivity {
                 //输入手机号
                 break;
             case R.id.sendCode_tv:
-                mPhone = mEdPhone.getText().toString();
-                if (TextUtils.isEmpty(mPhone)){
+                String phone = mEdPhone.getText().toString();
+                if (TextUtils.isEmpty(phone)) {
                     ToastUtil.showShort("请输入手机号");
                     return;
-                }else {
-                    startActivity(new Intent(LoginActivity.this,SendVeriActivity.class));
-                    ToastUtil.showShort("验证码已发送，请注意查收!");
+                } else {
+                    if (!phone.matches(AccountValidatorUtil.REGEX_MOBILE)){
+                        ToastUtil.showShort("请输入正确的手机号");
+                    }else {
+                        startActivity(new Intent(LoginActivity.this, SendVeriActivity.class));
+                        ToastUtil.showShort("验证码已发送，请注意查收!");
+                    }
                 }
                 break;
             case R.id.getCode_Rl:
@@ -157,6 +179,10 @@ public class LoginActivity extends SimpleActivity {
             case R.id.view:
                 break;
         }
+    }
+
+    private void sinaLogin() {
+
     }
 
     /**
@@ -191,4 +217,24 @@ public class LoginActivity extends SimpleActivity {
     }
 
 
+    @Override
+    public void onSuccess(SinaBean bean) {
+
+    }
+
+    @Override
+    public void onFail(String msg) {
+
+    }
+
+    @Override
+    public void go2MainActivity() {
+        startActivity(new Intent(LoginActivity.this,MainActivity.class));
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+    }
 }
