@@ -1,9 +1,12 @@
 package com.example.withm.ui.login;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContentResolverCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -19,6 +22,7 @@ import android.widget.TextView;
 import com.example.withm.R;
 import com.example.withm.app.MyApplication;
 import com.example.withm.base.SimpleActivity;
+import com.example.withm.ui.homepage.MainActivity;
 import com.example.withm.utils.ToastUtil;
 
 import java.util.Timer;
@@ -72,7 +76,32 @@ public class LoginActivity extends SimpleActivity {
         super.initView();
         mUserAgreement.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
         mUserAgreement.getPaint().setAntiAlias(true);//抗锯齿
-        mPhone = mEdPhone.getText().toString();
+
+    }
+
+    @Override
+    protected void initListener() {
+        super.initListener();
+        mEdPhone.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (count > 0){
+                    mGetCodeRl.setBackgroundResource(R.drawable.button_highlight);
+                }else {
+                    mGetCodeRl.setBackgroundResource(R.drawable.button_unavailable);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     @Override
@@ -99,7 +128,7 @@ public class LoginActivity extends SimpleActivity {
                 mLoginLl.setVisibility(View.GONE);
                 break;
             case R.id.casual_tv:
-                ToastUtil.showShort("随便逛逛");
+                startActivity(new Intent(LoginActivity.this,MainActivity.class));
                 //随便逛逛
                 break;
             case R.id.userAgreement:
@@ -110,26 +139,17 @@ public class LoginActivity extends SimpleActivity {
                 //跳一个选择国家的页面
                 break;
             case R.id.ed_phone:
-                mEdPhone.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-
-                    }
-                });
                 //输入手机号
                 break;
             case R.id.sendCode_tv:
-
+                mPhone = mEdPhone.getText().toString();
+                if (TextUtils.isEmpty(mPhone)){
+                    ToastUtil.showShort("请输入手机号");
+                    return;
+                }else {
+                    startActivity(new Intent(LoginActivity.this,SendVeriActivity.class));
+                    ToastUtil.showShort("验证码已发送，请注意查收!");
+                }
                 break;
             case R.id.getCode_Rl:
 
