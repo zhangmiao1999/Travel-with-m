@@ -56,4 +56,7 @@ dependencies {
     implementation rootProject.ext.dependencies["glide"]
     //沉浸式状态栏
     compile 'com.jaeger.statusbarutil:library:1.5.1'
+    //SmartRefreshLayout上拉加载下拉刷新
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-21'
+    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-21'
 }

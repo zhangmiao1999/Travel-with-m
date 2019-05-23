@@ -43,5 +43,6 @@ public class WanFragment extends BaseFragment<WanV, WanP> implements WanV {
     protected void initData() {
         mPresenter.getData();
 
+
     }
 }
