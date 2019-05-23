@@ -21,4 +21,5 @@
     <color name="lightgary">#22000000</color>
     <color name="alpha">#00ffffff</color>
     <color name="lightblue">#68EDF9</color>
+    <color name="c_999999">#FF999999</color>
 </resources>

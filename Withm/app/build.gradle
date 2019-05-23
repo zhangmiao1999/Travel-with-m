@@ -65,7 +65,5 @@ dependencies {
     implementation rootProject.ext.dependencies["glide"]
     //沉浸式状态栏
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
-    //验证码输入框
-//    compile 'com.jyn.verificationcodeview:verificationcodeview:1.0.0'
 
 }
