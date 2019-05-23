@@ -84,8 +84,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mRbWan.setChecked(true);
 
-        mToolbar.setTitle(" ");
-        setSupportActionBar(mToolbar);
     }
 
     @Override

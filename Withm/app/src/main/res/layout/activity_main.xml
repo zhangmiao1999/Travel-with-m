@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
-            android:drawableTop="@drawable/rb_wan"
+            android:drawableTop="@drawable/rb_my"
             android:gravity="center"
             android:text="@string/my"
             android:textColor="@color/textcolors" />

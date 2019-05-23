@@ -17,7 +17,7 @@ import butterknife.Unbinder;
 
 public abstract class BaseFragment<V extends BaseView,P extends BasePresenter> extends Fragment implements BaseView{
     private Unbinder mUnbinder;
-    private P mPresenter;
+    public P mPresenter;
 
     @Nullable
     @Override
@@ -34,15 +34,15 @@ public abstract class BaseFragment<V extends BaseView,P extends BasePresenter> e
         return inflate;
     }
 
-    private void initData() {
+    public void initData() {
 
     }
 
-    private void initListener() {
+    public void initListener() {
 
     }
 
-    private void initView() {
+    public void initView() {
 
     }
 
