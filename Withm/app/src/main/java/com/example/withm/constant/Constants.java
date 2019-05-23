@@ -18,15 +18,13 @@ public interface Constants {
     String PATH_SDCARD = Environment.getExternalStorageDirectory().getAbsolutePath() +
             File.separator + "codeest" + File.separator + "GeekNews";
 
-    String FILE_PROVIDER_AUTHORITY="com.baidu.geek.fileprovider";
+    String FILE_PROVIDER_AUTHORITY = "com.baidu.geek.fileprovider";
 
     //网络缓存的地址
     String PATH_DATA = MyApplication.getInstance().getCacheDir().getAbsolutePath() +
             File.separator + "data";
 
     String PATH_CACHE = PATH_DATA + "/NetCache";
-
-
 
 
     String DATA = "data";
@@ -39,4 +37,11 @@ public interface Constants {
 
     //设置界面的图片是否保存key值
     String SETTING_NO_IMAGE = "setting_no_image";
+    //登录保存的信息
+    String DESC = "";
+    String USERNAME = "";
+    String GENDER = "";
+    String EMAIL = "";
+    String PHOTO = "";
+    String PHONE = "";
 }

@@ -7,6 +7,24 @@
     <string name="hello">你好，为了获取更好的服务</string>
     <string name="login_banni">请登录伴米旅行</string>
     <string name="ed_phone">请输入手机号码</string>
+<resources>
+    <string name="app_name">伴米旅行</string>
+    <string name="tiyan">立即体验</string>
+    <string name="guide_textone">严选当地人的私藏线路</string>
+    <string name="guide_textthree">智能地图为你指路</string>
+    <string name="guide_texttwo">智能语音实时导览</string>
+    <string name="hello">你好，为了获取更好的服务</string>
+    <string name="login_banni">请登录伴米旅行</string>
+    <string name="ed_phone">请输入手机号码</string>
+
+    <string name="sendCode">发送验证码</string>
+    <string name="wxlogin">微信登录</string>
+    <string name="phonelogin">手机号登录</string>
+    <string name="sinalogin">微博登录</string>
+    <string name="casual">随便逛逛 》</string>
+    <string name="longAnd">登录或注册即同意伴米旅行</string>
+    <string name="userAgreement">用户协议</string>
+
     <string name="wan">怎么玩</string>
     <string name="discover">发现</string>
     <string name="concern">关注</string>
@@ -23,4 +41,7 @@
     <string name="instring">1983人感兴趣</string>
     <string name="art">艺术之旅</string>
     <string name="lift">·邂逅生活美学·</string>
+    <string name="incode">请输入验证码</string>
+    <string name="recode">重新获取(17 s)</string>
+
 </resources>
