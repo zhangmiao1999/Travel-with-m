@@ -34,7 +34,7 @@ public class SendVeriActivity extends AppCompatActivity {
         verificationcodeview.setOnCodeFinishListener(new VerificationCodeView.OnCodeFinishListener() {
             @Override
             public void onComplete(String content) {
-                
+                //上来了
             }
         });
     }
