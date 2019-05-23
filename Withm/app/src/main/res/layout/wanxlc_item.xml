@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dp_20">
+
+    <FrameLayout
+        android:layout_width="335dp"
+        android:layout_height="413dp"
+        android:background="@drawable/radious">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mm5" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#22000000"
+            android:padding="@dimen/dp_4">
+
+            <TextView
+                android:id="@+id/japan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/japan"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/japan"
+                android:layout_marginTop="@dimen/dp_4"
+                android:text="@string/laihu"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/zhidao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dao"
+                android:layout_marginTop="@dimen/dp_4"
+                android:text="@string/zhidao"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/price"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/button_highlight"
+                android:text="￥1.9"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/intrestring"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/price"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/instring"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>

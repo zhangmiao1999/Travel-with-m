@@ -17,7 +17,7 @@ import butterknife.Unbinder;
 
 public abstract class BaseFragment<V extends BaseView,P extends BasePresenter> extends Fragment implements BaseView{
     private Unbinder mUnbinder;
-    private P mPresenter;
+    protected P mPresenter;
 
     @Nullable
     @Override
@@ -31,18 +31,18 @@ public abstract class BaseFragment<V extends BaseView,P extends BasePresenter> e
         initView();
         initListener();
         initData();
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return inflate;
     }
-
-    private void initData() {
-
-    }
-
-    private void initListener() {
+  //石明洋 此处把私有方法修改为受保护的
+    protected void initData() {
 
     }
 
-    private void initView() {
+    protected void initListener() {
+
+    }
+
+    protected void initView() {
 
     }
 
