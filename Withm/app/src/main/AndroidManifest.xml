@@ -21,6 +21,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--1-->
         <activity android:name=".ui.wjlmyfragment.AboutBMActivity"></activity>
         <activity android:name=".ui.wjlmyfragment.SettingsActivity" />
         <activity

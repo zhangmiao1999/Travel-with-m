@@ -32,6 +32,7 @@ public class AboutBMActivity extends AppCompatActivity implements View.OnClickLi
      */
     private TextView mTvWechat;
     private LinearLayout mLl;
+    //1
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

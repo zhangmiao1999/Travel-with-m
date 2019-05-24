@@ -64,6 +64,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
      * 小
      */
     private TextView mTvTextsmall;
+    //1
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
