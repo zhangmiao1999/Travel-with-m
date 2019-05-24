@@ -12,6 +12,7 @@ import com.example.withm.ui.homepage.MainActivity;
 import com.example.withm.R;
 import com.example.withm.base.SimpleActivity;
 import com.example.withm.ui.guidepage.adapter.GuidancePageAdapter;
+import com.example.withm.ui.login.LoginActivity;
 import com.example.withm.utils.SpUtil;
 import com.example.withm.widget.PreviewIndicator;
 import com.jaeger.library.StatusBarUtil;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
  * Created by
  */
 
-public class GuidepageActivity extends SimpleActivity implements ViewPager.OnPageChangeListener, View.OnTouchListener {
+public class GuidepageActivity extends SimpleActivity implements ViewPager.OnPageChangeListener {
 
     private ViewPager mGuidanceVp;
     private PreviewIndicator mGuidePi;
@@ -49,7 +50,7 @@ public class GuidepageActivity extends SimpleActivity implements ViewPager.OnPag
     protected void initView() {
         boolean b = (boolean) SpUtil.getParam("guide", false);
         if (b) {
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, LoginActivity.class));
             finish();
         }
 
@@ -66,7 +67,16 @@ public class GuidepageActivity extends SimpleActivity implements ViewPager.OnPag
         mGuidanceVp.setAdapter(adapter);
 
         mGuideBtn = (Button) findViewById(R.id.guide_btn);
-        mGuideBtn.setOnTouchListener(this);
+        mGuideBtn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                Log.d("第一次点击", "onClick: ");
+                SpUtil.setParam("guide", true);
+                startActivity(new Intent(GuidepageActivity.this, LoginActivity.class));
+                finish();
+                return false;
+            }
+        });
     }
 
 
@@ -95,16 +105,4 @@ public class GuidepageActivity extends SimpleActivity implements ViewPager.OnPag
 
     }
 
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        switch (v.getId()) {
-            case R.id.guide_btn:
-                Log.d("第一次点击", "onClick: ");
-                SpUtil.setParam("guide", true);
-                startActivity(new Intent(GuidepageActivity.this, MainActivity.class));
-                finish();
-                break;
-        }
-        return false;
-    }
 }

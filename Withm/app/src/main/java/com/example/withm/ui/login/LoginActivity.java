@@ -1,9 +1,12 @@
 package com.example.withm.ui.login;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContentResolverCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -18,8 +21,17 @@ import android.widget.TextView;
 
 import com.example.withm.R;
 import com.example.withm.app.MyApplication;
+import com.example.withm.base.BaseActivity;
 import com.example.withm.base.SimpleActivity;
+import com.example.withm.http.bean.SinaBean;
+import com.example.withm.http.presenter.SinaPresenter;
+import com.example.withm.http.view.SinaView;
+import com.example.withm.ui.homepage.MainActivity;
+import com.example.withm.utils.AccountValidatorUtil;
+import com.example.withm.utils.SpUtil;
 import com.example.withm.utils.ToastUtil;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.bean.SHARE_MEDIA;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -28,7 +40,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LoginActivity extends SimpleActivity {
+public class LoginActivity extends BaseActivity<SinaView, SinaPresenter> implements SinaView {
 
 
     @BindView(R.id.hello)
@@ -60,7 +72,6 @@ public class LoginActivity extends SimpleActivity {
     @BindView(R.id.login_ll)
     LinearLayout mLoginLl;
     //输入的手机号
-    private String mPhone;
 
     @Override
     protected int createLayout() {
@@ -72,7 +83,42 @@ public class LoginActivity extends SimpleActivity {
         super.initView();
         mUserAgreement.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
         mUserAgreement.getPaint().setAntiAlias(true);//抗锯齿
-        mPhone = mEdPhone.getText().toString();
+        Boolean loginBind = (Boolean) SpUtil.getParam("loginBind", false);
+        //判断是否登录，如果登录直接跳转主页
+        if (loginBind) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
+    }
+
+    @Override
+    protected SinaPresenter createPresenter() {
+        return new SinaPresenter();
+    }
+
+    @Override
+    protected void initListener() {
+        super.initListener();
+        mEdPhone.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (count > 0) {
+                    mGetCodeRl.setBackgroundResource(R.drawable.button_highlight);
+                } else {
+                    mGetCodeRl.setBackgroundResource(R.drawable.button_unavailable);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     @Override
@@ -90,7 +136,8 @@ public class LoginActivity extends SimpleActivity {
                 break;
             case R.id.sina_login:
                 //登录微博
-                ToastUtil.showShort("微博登录");
+                mPresenter.oauthLogin(SHARE_MEDIA.SINA, this);
+
                 break;
             case R.id.phone_login:
                 //手机号登录
@@ -99,7 +146,7 @@ public class LoginActivity extends SimpleActivity {
                 mLoginLl.setVisibility(View.GONE);
                 break;
             case R.id.casual_tv:
-                ToastUtil.showShort("随便逛逛");
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 //随便逛逛
                 break;
             case R.id.userAgreement:
@@ -110,26 +157,21 @@ public class LoginActivity extends SimpleActivity {
                 //跳一个选择国家的页面
                 break;
             case R.id.ed_phone:
-                mEdPhone.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-
-                    }
-                });
                 //输入手机号
                 break;
             case R.id.sendCode_tv:
-
+                String phone = mEdPhone.getText().toString();
+                if (TextUtils.isEmpty(phone)) {
+                    ToastUtil.showShort("请输入手机号");
+                    return;
+                } else {
+                    if (!phone.matches(AccountValidatorUtil.REGEX_MOBILE)){
+                        ToastUtil.showShort("请输入正确的手机号");
+                    }else {
+                        startActivity(new Intent(LoginActivity.this, SendVeriActivity.class));
+                        ToastUtil.showShort("验证码已发送，请注意查收!");
+                    }
+                }
                 break;
             case R.id.getCode_Rl:
 
@@ -137,6 +179,10 @@ public class LoginActivity extends SimpleActivity {
             case R.id.view:
                 break;
         }
+    }
+
+    private void sinaLogin() {
+
     }
 
     /**
@@ -171,4 +217,24 @@ public class LoginActivity extends SimpleActivity {
     }
 
 
+    @Override
+    public void onSuccess(SinaBean bean) {
+
+    }
+
+    @Override
+    public void onFail(String msg) {
+
+    }
+
+    @Override
+    public void go2MainActivity() {
+        startActivity(new Intent(LoginActivity.this,MainActivity.class));
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+    }
 }

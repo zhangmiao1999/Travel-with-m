@@ -72,9 +72,9 @@ public class GuidancePageAdapter extends PagerAdapter {
     private void setProtocolTwo() {
         SpannableString spanString = new SpannableString(MyApplication.getInstance().getString(R.string.guide_texttwo));
         //前景色
-        ForegroundColorSpan span2 = new ForegroundColorSpan(MyApplication.getInstance().getColor(R.color.c_fa6a13));
+        ForegroundColorSpan span2 = new ForegroundColorSpan(MyApplication.getInstance().getResources().getColor(R.color.c_fa6a13));
         spanString.setSpan(span2, 0, 4, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-        ForegroundColorSpan span = new ForegroundColorSpan(MyApplication.getInstance().getColor(R.color.c_78d9ff));
+        ForegroundColorSpan span = new ForegroundColorSpan(MyApplication.getInstance().getResources().getColor(R.color.c_78d9ff));
         spanString.setSpan(span, 4, 8, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         //需要设置这个clickableSpan才会有效果
         mText2.setMovementMethod(LinkMovementMethod.getInstance());
@@ -84,9 +84,9 @@ public class GuidancePageAdapter extends PagerAdapter {
     private void setProtocolThree() {
         SpannableString spanString = new SpannableString(MyApplication.getInstance().getString(R.string.guide_textthree));
         //前景色
-        ForegroundColorSpan span2 = new ForegroundColorSpan(MyApplication.getInstance().getColor(R.color.c_fa6a13));
+        ForegroundColorSpan span2 = new ForegroundColorSpan(MyApplication.getInstance().getResources().getColor(R.color.c_fa6a13));
         spanString.setSpan(span2, 0, 4, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-        ForegroundColorSpan span = new ForegroundColorSpan(MyApplication.getInstance().getColor(R.color.c_78d9ff));
+        ForegroundColorSpan span = new ForegroundColorSpan(MyApplication.getInstance().getResources().getColor(R.color.c_78d9ff));
         spanString.setSpan(span, 4, 8, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         //需要设置这个clickableSpan才会有效果
         mText3.setMovementMethod(LinkMovementMethod.getInstance());
@@ -96,9 +96,9 @@ public class GuidancePageAdapter extends PagerAdapter {
     private void setProtocolOne() {
         SpannableString spanString = new SpannableString(MyApplication.getInstance().getString(R.string.guide_textone));
         //前景色
-        ForegroundColorSpan span = new ForegroundColorSpan(MyApplication.getInstance().getColor(R.color.c_78d9ff));
+        ForegroundColorSpan span = new ForegroundColorSpan(MyApplication.getInstance().getResources().getColor(R.color.c_78d9ff));
         spanString.setSpan(span, 0, 6, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-        ForegroundColorSpan span2 = new ForegroundColorSpan(MyApplication.getInstance().getColor(R.color.c_fa6a13));
+        ForegroundColorSpan span2 = new ForegroundColorSpan(MyApplication.getInstance().getResources().getColor(R.color.c_fa6a13));
         spanString.setSpan(span2, 6, 10, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         //需要设置这个clickableSpan才会有效果
         mText1.setMovementMethod(LinkMovementMethod.getInstance());
