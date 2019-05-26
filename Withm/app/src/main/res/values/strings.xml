@@ -8,7 +8,10 @@
     <string name="login_banni">请登录伴米旅行</string>
     <string name="ed_phone">请输入手机号码</string>
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 4ad5aff7444890053ec354c69ade11ffb7734439
     <string name="sendCode">发送验证码</string>
     <string name="wxlogin">微信登录</string>
     <string name="phonelogin">手机号登录</string>
@@ -25,6 +28,41 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hint_banmi">目的地，伴米名称</string>
+<<<<<<< HEAD
+    <string name="unlogin">未登录</string>
+    <string name="zhanghu">我的账户</string>
+    <string name="car">我的卡卷</string>
+    <string name="go">已购行程</string>
+    <string name="love">我的收藏</string>
+    <string name="myconcern">我的关注</string>
+    <string name="fankui">意见反馈</string>
+    <string name="share">分享“伴米旅行”给好友</string>
+    <string name="version">当前版本V3.3.3</string>
+    <string name="settings">设置</string>
+    <string name="set_about">关于伴米</string>
+    <string name="set_clear">清除缓存</string>
+    <string name="set_textsize">字体大小</string>
+    <string name="small">小</string>
+    <string name="clear">0.0B</string>
+    <string name="kefu">联系客服</string>
+    <string name="phone">&#160;&#160;&#160;&#160;&#160;400-086-7800</string>
+    <string name="emial">&#160;&#160;&#160;&#160;&#160;contact@banmi.com</string>
+    <string name="wechat">&#160;&#160;&#160;&#160;&#160;sagyran</string>
+    <string name="app">免责声明</string>
+    <string name="app_contern">1.伴米旅行App中部分图片来源于网络。图片版权属于原作者，本App转载仅供大家观赏，交流，切勿用于任何商业活动</string>
+    <string name="app_conterntwo">2.如果侵占了您的合法权益，请您及时与我们联系，我们会在第一时间删除相关内容，或付费购买</string>
+    <string name="set_tel">手机号</string>
+    <string name="unban">未绑定&#160;&#160;</string>
+    <string name="set_wechat">微信</string>
+    <string name="ban">绑定</string>
+    <string name="set_xin">微博</string>
+    <string name="exitlogin">退出登录</string>
+    <string name="m">中</string>
+    <string name="big">大</string>
+    <string name="dissmis">取消</string>
+
+</resources>
+=======
     <string name="recode">重新发送</string>
     <string name="incode">请输入验证码</string>
     <string name="japan">日本·四国地区</string>
@@ -35,3 +73,4 @@
     <string name="lift">·邂逅生活美学·</string>
 
 </resources>
+>>>>>>> 4ad5aff7444890053ec354c69ade11ffb7734439
