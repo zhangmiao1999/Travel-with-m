@@ -23,10 +23,10 @@ public class WanAdapter extends RecyclerView.Adapter {
 
 
     private final FragmentActivity mactivity;
-    private final List<DayBean.ResultsBean> itemList;
+    private final List<DayBean.ResultBean.RoutesBean> itemList;
     private OnItemClickLisener mlisener;
 
-    public WanAdapter(FragmentActivity activity, List<DayBean.ResultsBean> itemList) {
+    public WanAdapter(FragmentActivity activity, List<DayBean.ResultBean.RoutesBean> itemList) {
 
         mactivity = activity;
         this.itemList = itemList;
@@ -34,7 +34,7 @@ public class WanAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemViewType(int position) {
-        if (position == 1) {
+        if ("bundle".equals(itemList.get(position).getType())) {
             return 1;
         } else {
             return 2;
@@ -54,17 +54,30 @@ public class WanAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         int viewType = getItemViewType(position);
         if (viewType == 1) {
             TextViewHolder holder1 = (TextViewHolder) holder;
-            Glide.with(mactivity).load(itemList.get(position).getUrl()).into(holder1.mPic);
+            Glide.with(mactivity).load(itemList.get(position).getCardURL()).into(holder1.mPic);
 
         } else {
             ListViewHolder holder1 = (ListViewHolder) holder;
-
-            Glide.with(mactivity).load(itemList.get(position).getUrl()).into(holder1.mPic);
+           holder1.mJapan.setText(itemList.get(position).getCity());
+           holder1.mDao.setText(itemList.get(position).getTitle());
+           holder1.mZhidao.setText(itemList.get(position).getIntro());
+           holder1.mPrice.setText(itemList.get(position).getPrice());
+           holder1.mIntrestring.setText(itemList.get(position).getPurchasedTimes()+"人感兴趣");
+            Glide.with(mactivity).load(itemList.get(position).getCardURL()).into(holder1.mPic);
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mlisener!=null) {
+                    mlisener.OnItemClickLisener(position);
+                }
+            }
+        });
     }
 
     @Override
@@ -101,15 +114,10 @@ public class WanAdapter extends RecyclerView.Adapter {
 
     class TextViewHolder extends RecyclerView.ViewHolder {
 
-        TextView mJapan;
-        TextView mDao;
-        TextView mZhidao;
         ImageView mPic;
         public TextViewHolder(View itemView) {
             super(itemView);
-            this.mJapan = (TextView) itemView.findViewById(R.id.japan);
-            this.mDao = (TextView) itemView.findViewById(R.id.dao);
-            this.mZhidao = (TextView) itemView.findViewById(R.id.zhidao);
+
             this.mPic = (ImageView) itemView.findViewById(R.id.pic);
         }
     }

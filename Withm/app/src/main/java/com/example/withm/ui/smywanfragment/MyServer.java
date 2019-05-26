@@ -10,8 +10,8 @@ import retrofit2.http.GET;
 public interface MyServer {
 
     //每日精选
-    public static final String DAILY="http://gank.io/api/data/%E7%A6%8F%E5%88%A9/";
+    public static final String DAILY="http://api.banmi.com/api/3.0/";
     //    http://baobab.wandoujia.com/api/v2/feed?num=2&udid=26868b32e808498db32fd51fb422d00175e179df&vc=83
-    @GET("20/3")
+    @GET("content/routesbundles?page=1&token=JVy0IvZamK7f7FBZLKFtoniiixKMlnnJ6dWZ6NlsY4HGsxcAA9qvFo8yacHCKHE8YAcd0UF9L59nEm7zk9AUixee0Hl8EeWA880c0ikZBW0KEYuxQy5Z9NP3BNoBi3o3Q0g")
     Observable<DayBean> daydata();
 }

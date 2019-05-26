@@ -71,7 +71,6 @@
                 android:layout_below="@id/price"
                 android:layout_marginRight="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_20"
-                android:text="@string/instring"
                 android:textSize="14sp" />
         </RelativeLayout>
     </FrameLayout>
