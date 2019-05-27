@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.CALL_PHONE" />
     //地图
 
@@ -41,18 +42,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".ui.homepage.MainActivity"
-            android:launchMode="singleInstance"
-            android:theme="@style/TranslucentTheme" />
+
         <!-- 引导页面 -->
         <activity
             android:name=".ui.guidepage.activity.GuidepageActivity"
             android:launchMode="singleTask"
             android:theme="@style/SplashStyle" />
-
-
-
         <!-- APP入口 -->
         <activity
             android:name=".ui.StartActivity"
@@ -88,13 +83,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <!--<activity android:name=".ui.smywanfragment.WanDiatlyActivity" />-->
         <activity android:name=".ui.wjlmyfragment.SettingsActivity" />
 
         <!-- 百度地图 -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="Pg0E8HLNHQH5vPWZSoNpDcXfOe8om3GF" />
+            android:value="Ur0F67EZ2eF4I97sgW6iIkIsE27f7Yml" />
 
         <!-- 百度地图end -->
 

@@ -1,8 +1,5 @@
 package com.example.withm.ui.fragment;
 
-
-import android.content.Intent;
-
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -19,6 +16,7 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import java.util.List;
 
 import butterknife.BindView;
+
 
 /**
  * smy
@@ -44,10 +42,8 @@ public class WanFragment extends BaseFragment<WanV, WanP> implements WanV {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         mPresenter.getData();
-
-
     }
 
     @Override

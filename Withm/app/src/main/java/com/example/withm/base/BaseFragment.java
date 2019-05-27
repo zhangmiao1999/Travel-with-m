@@ -19,7 +19,6 @@ public abstract class BaseFragment<V extends BaseView,P extends BasePresenter> e
     private Unbinder mUnbinder;
 
 
-    protected P mPresenter;
 
 
     @Nullable
@@ -41,32 +40,10 @@ public abstract class BaseFragment<V extends BaseView,P extends BasePresenter> e
 
 
 
-  //石明洋 此处把私有方法修改为受保护的
-    protected void initData() {
-
-    }
-
-    protected void initListener() {
-
-    }
-
-    protected void initView() {
 
 
-    }
 
-    protected abstract P createPresenter();
 
-    protected abstract int createLayout();
+    public void initView() {
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        if (mUnbinder!=null){
-            mUnbinder.unbind();
-        }
-        if (mPresenter!=null){
-            mPresenter.detachView();
-        }
-    }
 }

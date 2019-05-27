@@ -43,7 +43,6 @@
         android:layout_below="@+id/please_in"
         app:vcv_et_bg="@drawable/et_login_code"
         app:vcv_et_cursor="@drawable/et_cursor"
-        app:vcv_et_inputType="number"
         app:vcv_et_number="4"
         app:vcv_et_text_color="@android:color/black"
         app:vcv_et_text_size="6sp"/>

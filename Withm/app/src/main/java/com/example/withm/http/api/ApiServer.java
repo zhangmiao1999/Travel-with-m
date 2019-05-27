@@ -1,10 +1,14 @@
 package com.example.withm.http.api;
 
+import com.example.withm.http.bean.RegisterBean;
 import com.example.withm.http.bean.SinaBean;
 import com.example.withm.http.bean.VerifyBean;
 
+import java.util.Map;
+
 import io.reactivex.Observable;
 import retrofit2.http.Field;
+import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -26,8 +30,8 @@ public interface ApiServer {
     @POST("api/3.0/account/login/oauth")
     Observable<SinaBean> postWeiboLogin(@Field("oAuthToken") String oAuthToken);
 
-//    http://yun918.cn/study/public/index.php/
-    String sLogin= "http://yun918.cn/study/public/index.php/";
+    //    http://yun918.cn/study/public/index.php/
+    String sLogin = "http://yun918.cn/study/public/index.php/";
 
     /**
      * 获取验证码
@@ -36,4 +40,8 @@ public interface ApiServer {
      */
     @GET("verify")
     Observable<VerifyBean> getVerifyCode();
+
+    @FormUrlEncoded
+    @POST("register")
+    Observable<RegisterBean> getRegister(@FieldMap Map<String, String> map);
 }

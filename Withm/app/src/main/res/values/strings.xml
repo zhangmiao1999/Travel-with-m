@@ -25,6 +25,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hint_banmi">目的地，伴米名称</string>
 
+
     <string name="unlogin">未登录</string>
     <string name="zhanghu">我的账户</string>
     <string name="car">我的卡卷</string>
@@ -57,7 +58,6 @@
     <string name="big">大</string>
     <string name="dissmis">取消</string>
 
-
     <string name="recode">重新发送</string>
     <string name="incode">请输入验证码</string>
     <string name="japan">日本·四国地区</string>
@@ -68,4 +68,5 @@
     <string name="lift">·邂逅生活美学·</string>
 
 </resources>
+
 
