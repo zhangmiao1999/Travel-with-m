@@ -1,15 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".ui.fragment.ConcernFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white">
+
+    </android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/emil"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:src="@mipmap/message"
         android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolBar"
+        android:layout_marginTop="@dimen/dp_9"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/fish"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/iconkaquan" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/fish"
+            android:layout_alignLeft="@+id/textView"
+            android:layout_alignStart="@+id/textView"
+            android:text="伴小米"
+            android:layout_marginBottom="15dp"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fish"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_toEndOf="@+id/fish"
+            android:layout_toRightOf="@+id/fish"
+
+            android:maxLines="2"
+            android:text="你好哇~送给你一张拍摄与纽约的美照，带着美好心情，努力生活！"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/iv1"
+            android:layout_width="@dimen/dp_75"
+            android:layout_height="@dimen/dp_85"
+            android:layout_below="@+id/textView"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@+id/fish"
+            android:layout_toRightOf="@+id/fish"
+            android:scaleType="fitXY"
+            android:src="@drawable/m8" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/iv1"
+            android:layout_alignStart="@+id/iv1"
+            android:layout_below="@+id/iv1"
+            android:text="12月前" />
+    </RelativeLayout>
+</RelativeLayout>

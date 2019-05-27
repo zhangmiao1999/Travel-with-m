@@ -7,13 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-
-    <uses-permission
-        android:name="android.permission.READ_LOGS"
-        tools:ignore="ProtectedPermissions" />
-
-
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <application
         android:name=".app.MyApplication"
         android:allowBackup="true"
@@ -22,16 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <!--1-->
-        <activity android:name=".ui.wjlmyfragment.AboutBMActivity"></activity>
-        <activity android:name=".ui.wjlmyfragment.SettingsActivity" />
-
-        <!--首页-->
-        <activity
-            android:name=".ui.homepage.MainActivity"
-            android:launchMode="singleInstance"
-            android:theme="@style/TranslucentTheme" />
+            android:theme="@style/AppTheme" />
+		
         <!-- 引导页面 -->
         <activity
             android:name=".ui.guidepage.activity.GuidepageActivity"
@@ -40,7 +26,6 @@
         <!-- APP入口 -->
         <activity
             android:name=".ui.StartActivity"
-
             android:theme="@style/SplashStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,40 +33,40 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+     
+        <activity android:name=".ui.wjlmyfragment.AboutBMActivity"/>
+        <activity android:name=".ui.smywanfragment.WanDiatlyActivity" />
+        <activity android:name=".ui.wjlmyfragment.SettingsActivity" />
+        <activity android:name=".ui.xzqfragment.activity.MessageActivity"/>
+        <activity android:name=".ui.xzqfragment.activity.AdventureActivity"/>
+        <activity android:name=".ui.xzqfragment.activity.PhotoActivity"/>
 
-
-        <!--登录页面-->
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:theme="@style/TranslucentTheme">
-
-        </activity>
-        <!--验证码-->
-        <activity android:name=".ui.login.SendVeriActivity"></activity>
-
-        <!--友盟start-->
+        <!-- 友盟start -->
         <activity
             android:name="com.umeng.socialize.media.WBShareCallBackActivity"
             android:configChanges="keyboardHidden|orientation"
             android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
-        <activity
-            android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
             android:configChanges="keyboardHidden|orientation"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
         <activity
             android:name="com.sina.weibo.sdk.share.WbShareTransActivity"
             android:launchMode="singleTask"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
         </activity>
+
+
+        <!-- 百度地图 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="Ur0F67EZ2eF4I97sgW6iIkIsE27f7Yml" />
+
+        <!-- 百度地图end -->
+
     </application>
 
 </manifest>
