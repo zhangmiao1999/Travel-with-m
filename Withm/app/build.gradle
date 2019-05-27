@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'org.greenrobot.greendao' // apply plugin 步骤3
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     defaultConfig {
@@ -15,6 +15,8 @@ android {
                 includeCompileClasspath = true
             }
         }
+
+        multiDexEnabled true
     }
 
     //腾讯bugly
@@ -36,6 +38,16 @@ android {
             keyAlias "androiddebugkey"
             keyPassword "android"
         }
+    }
+    //greendao配置  步骤5
+    greendao {
+        //数据库版本号，升级时修改
+        schemaVersion 1
+        //生成的DAO，DaoMaster和DaoSession的包路径。默认与表实体所在的包路径相同
+        //不改成自己的是狗!!!!!!!!   : )
+        daoPackage 'com.example.withm.http.dao'
+        //生成源文件的路径。默认源文件目录是在build目录中的(build/generated/source/greendao)
+        targetGenDir 'src/main/java'
     }
 
 }
@@ -67,6 +79,11 @@ dependencies {
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
 
     //SmartRefreshLayout上拉加载下拉刷新
-    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-21'
-    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-21'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-21'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-21'
+    //greenDAO配置  步骤4
+    implementation 'org.greenrobot:greendao:3.2.2' // add library
+    implementation 'org.greenrobot:greendao-generator:3.2.2'
+
+    implementation 'com.android.support:multidex:1.0.3'
 }

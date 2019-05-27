@@ -134,7 +134,7 @@ public class VerificationCodeView extends LinearLayout implements TextWatcher, V
         @SuppressLint({"Recycle", "CustomViewStyleable"})
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.vericationCodeView);
         mEtNumber = typedArray.getInteger(R.styleable.vericationCodeView_vcv_et_number, 4);
-        int inputType = typedArray.getInt(R.styleable.vericationCodeView_vcv_et_inputType, VCInputType.NUMBER.ordinal());
+        int inputType = typedArray.getInt(R.styleable.vericationCodeView_vcv_et_inputType, VCInputType.TEXT.ordinal());
         mEtInputType = VCInputType.values()[inputType];
         mEtWidth = typedArray.getDimensionPixelSize(R.styleable.vericationCodeView_vcv_et_width, 120);
         mEtTextColor = typedArray.getColor(R.styleable.vericationCodeView_vcv_et_text_color, Color.BLACK);

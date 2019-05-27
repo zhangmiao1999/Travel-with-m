@@ -5,15 +5,18 @@ buildscript {
     repositories {
         google()
 //        jcenter()
+        mavenCentral() // 添加代码仓库  步骤1
         maven{url 'http://maven.aliyun.com/nexus/content/groups/public/'}
     }
     dependencies {
         //noinspection GradleDependency
-        classpath 'com.android.tools.build:gradle:3.3.2'
+        classpath 'com.android.tools.build:gradle:3.1.2'
         
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        //greenDao生产代码插件  步骤2
+            classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2' // add plugin
     }
 
 }

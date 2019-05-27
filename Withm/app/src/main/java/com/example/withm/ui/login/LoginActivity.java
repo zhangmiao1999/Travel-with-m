@@ -11,6 +11,7 @@ import android.support.v7.widget.CardView;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -23,7 +24,9 @@ import com.example.withm.R;
 import com.example.withm.app.MyApplication;
 import com.example.withm.base.BaseActivity;
 import com.example.withm.base.SimpleActivity;
+import com.example.withm.http.bean.RegisterBean;
 import com.example.withm.http.bean.SinaBean;
+import com.example.withm.http.bean.VerifyBean;
 import com.example.withm.http.presenter.SinaPresenter;
 import com.example.withm.http.view.SinaView;
 import com.example.withm.ui.homepage.MainActivity;
@@ -43,6 +46,7 @@ import butterknife.OnClick;
 public class LoginActivity extends BaseActivity<SinaView, SinaPresenter> implements SinaView {
 
 
+    private static final String TAG = "LoginActivity";
     @BindView(R.id.hello)
     TextView mHello;
     @BindView(R.id.longin_banmi)
@@ -137,7 +141,6 @@ public class LoginActivity extends BaseActivity<SinaView, SinaPresenter> impleme
             case R.id.sina_login:
                 //登录微博
                 mPresenter.oauthLogin(SHARE_MEDIA.SINA, this);
-
                 break;
             case R.id.phone_login:
                 //手机号登录
@@ -168,8 +171,7 @@ public class LoginActivity extends BaseActivity<SinaView, SinaPresenter> impleme
                     if (!phone.matches(AccountValidatorUtil.REGEX_MOBILE)){
                         ToastUtil.showShort("请输入正确的手机号");
                     }else {
-                        startActivity(new Intent(LoginActivity.this, SendVeriActivity.class));
-                        ToastUtil.showShort("验证码已发送，请注意查收!");
+                        mPresenter.downVerifyCode();
                     }
                 }
                 break;
@@ -181,9 +183,6 @@ public class LoginActivity extends BaseActivity<SinaView, SinaPresenter> impleme
         }
     }
 
-    private void sinaLogin() {
-
-    }
 
     /**
      * 回退监听
@@ -230,6 +229,32 @@ public class LoginActivity extends BaseActivity<SinaView, SinaPresenter> impleme
     @Override
     public void go2MainActivity() {
         startActivity(new Intent(LoginActivity.this,MainActivity.class));
+    }
+
+    @Override
+    public void onSuccessVerify(VerifyBean bean) {
+        String data = bean.getData();
+        Log.d(TAG, "验证码: "+data);
+        Intent intent = new Intent(LoginActivity.this, SendVeriActivity.class);
+        intent.putExtra("verify",data);
+        intent.putExtra("phone",mEdPhone.getText().toString());
+        startActivity(intent);
+        ToastUtil.showShort("验证码已发送，请注意查收!");
+    }
+
+    @Override
+    public void onFailVerify(String msg) {
+
+    }
+
+    @Override
+    public void onSuccessRegister(RegisterBean bean) {
+
+    }
+
+    @Override
+    public void onFailRegister(String msg) {
+
     }
 
     @Override
