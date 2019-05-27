@@ -11,7 +11,6 @@ import com.example.withm.R;
 import com.example.withm.base.BaseFragment;
 import com.example.withm.ui.smywanfragment.DayBean;
 import com.example.withm.ui.smywanfragment.WanAdapter;
-import com.example.withm.ui.smywanfragment.WanDiatlyActivity;
 import com.example.withm.ui.smywanfragment.WanP;
 import com.example.withm.ui.smywanfragment.WanV;
 import com.example.withm.utils.ToastUtil;
@@ -58,14 +57,14 @@ public class WanFragment extends BaseFragment<WanV, WanP> implements WanV {
         WanAdapter adapter = new WanAdapter(getActivity(),itemList);
           rlv.setAdapter(adapter);
 
-          adapter.SetOnItemClickLisener(new WanAdapter.OnItemClickLisener() {
-              @Override
-              public void OnItemClickLisener(int position) {
-                  Intent intent = new Intent(getContext(), WanDiatlyActivity.class);
-                  intent.putExtra("pic",bean.getResult().getRoutes().get(0).getCardURL());
-                  startActivity(intent);
-              }
-          });
+//          adapter.SetOnItemClickLisener(new WanAdapter.OnItemClickLisener() {
+//              @Override
+//              public void OnItemClickLisener(int position) {
+//                  Intent intent = new Intent(getContext(), WanDiatlyActivity.class);
+//                  intent.putExtra("pic",bean.getResult().getRoutes().get(0).getCardURL());
+//                  startActivity(intent);
+//              }
+//          });
     }
 
     @Override
