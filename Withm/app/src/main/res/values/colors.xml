@@ -26,5 +26,6 @@
 
     <color name="lightblue">#68EDF9</color>
     <color name="c_999999">#FF999999</color>
+    <color name="black">#000000</color>
 
 </resources>

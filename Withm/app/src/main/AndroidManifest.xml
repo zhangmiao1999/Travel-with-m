@@ -62,6 +62,12 @@
         <activity
             android:name=".ui.login.LoginActivity"
             android:theme="@style/TranslucentTheme" />
+        <activity android:name=".ui.wjlmyfragment.AboutBMActivity"/>
+        <activity android:name=".ui.smywanfragment.WanDiatlyActivity" />
+        <activity android:name=".ui.wjlmyfragment.SettingsActivity" />
+        <activity android:name=".ui.xzqfragment.activity.MessageActivity"/>
+        <activity android:name=".ui.xzqfragment.activity.AdventureActivity"/>
+        <activity android:name=".ui.xzqfragment.activity.PhotoActivity"/>
 
         <!-- 友盟start -->
         <activity
@@ -84,8 +90,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.smywanfragment.WanDiatlyActivity" />
-        <activity android:name=".ui.wjlmyfragment.SettingsActivity" />
+
 
         <!-- 百度地图 -->
         <meta-data
